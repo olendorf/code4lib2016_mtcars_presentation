@@ -3,7 +3,7 @@ title       : Motor Trend Cars Analysis
 subtitle    : Lets Talk About Cars
 author      : Robert Olendorf
 job         : Gadabout
-framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+framework   : deckjs        # {io2012, html5slides, shower, dzslides, ...}
 
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
@@ -12,6 +12,9 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
+
+
+
 # Motor Trend Cars
 ## Lets Talk About Cars
 
@@ -19,9 +22,9 @@ knit        : slidify::knit2slides
 
 ## Cars Look Really nice
 
-![A funky rat rod.](assets/images/ratrod.jpg)
+<img src="assets/fig/a cool ratrod-1.png" title="plot of chunk a cool ratrod" alt="plot of chunk a cool ratrod" style="display: block; margin: auto;" />
 
---- .class #id 
+---
 
 ## Slide 2
 

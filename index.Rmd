@@ -3,7 +3,7 @@ title       : Motor Trend Cars Analysis
 subtitle    : Lets Talk About Cars
 author      : Robert Olendorf
 job         : Gadabout
-framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+framework   : deckjs        # {io2012, html5slides, shower, dzslides, ...}
 
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
@@ -12,6 +12,25 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
+
+```{r, setup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, error=TRUE}
+  if(!require("pander"))
+  {
+    install.packages("pander", repos="http://cran.rstudio.com/", dependencies = TRUE)
+  }
+  
+  library(pander)
+
+  if(!require("png"))
+  {
+    install.packages("png", repos="http://cran.rstudio.com/", dependencies = TRUE)
+  }
+  library(png) 
+  
+
+
+```
+
 # Motor Trend Cars
 ## Lets Talk About Cars
 
@@ -19,9 +38,16 @@ knit        : slidify::knit2slides
 
 ## Cars Look Really nice
 
-![A funky rat rod.](assets/images/ratrod.jpg)
+```{r, a cool ratrod, fig.width=8.0, echo=FALSE, fig.align='center'}
 
---- .class #id 
+   
+  library(grid)
+  img <- readPNG("assets/img/ratrod.png")
+   grid.raster(img, just="centre")
+
+```
+
+---
 
 ## Slide 2
 
