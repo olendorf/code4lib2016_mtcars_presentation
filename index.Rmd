@@ -3,7 +3,7 @@ title       : Motor Trend Cars Analysis
 subtitle    : Lets Talk About Cars
 author      : Robert Olendorf
 job         : Gadabout
-framework   : deckjs        # {io2012, html5slides, shower, dzslides, ...}
+framework   : deckjs #{io2012, html5slides, shower, dzslides, ...}
 
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
@@ -21,6 +21,13 @@ knit        : slidify::knit2slides
   
   library(pander)
 
+  if(!require("xtable"))
+  {
+    install.packages("xtable", repos="http://cran.rstudio.com/", dependencies = TRUE)
+  }
+  
+  library(xtable)
+
   if(!require("png"))
   {
     install.packages("png", repos="http://cran.rstudio.com/", dependencies = TRUE)
@@ -33,6 +40,21 @@ knit        : slidify::knit2slides
 
 # Motor Trend Cars
 ## Lets Talk About Cars
+
+---
+
+## Some Fun Facts About cars
+
+### Facts
+
+1. Cars have four wheels
+2. Some cars are really fast
+3. The Gemlin is very underrated
+
+### Fictions
+
+1. Cars can drive them selves
+2. We'll have flying cars in 2010
 
 ---
 
@@ -49,7 +71,37 @@ knit        : slidify::knit2slides
 
 ---
 
-## Slide 2
+## Another Peak At Our Data
+
+```{r, mtcars-data, echo=FALSE}
+   car.data <- head(mtcars[, 1:6], 5)
+   set.alignment(row.names = 'left')
+   pander(car.data, style = 'rmarkdown', split.cells = Inf, caption = "The first six columns and 5 rows of mtcars data")
+```
+
+---&twocol
+
+## Analyzing The Data
+
+### We can display two columns with a custom layout.
+
+*** {name: left}
+
+
+```{r, mtcars-regression, results='asis', echo=FALSE}
+   
+  library(xtable)
+  print(xtable(summary(lm(mtcars$mpg ~ mtcars$wt))),type='html')
+```
+
+*** {name: right}
+
+
+```{r, mtcars-plot, echo=FALSE}
+  plot(mtcars$wt, mtcars$mpg)
+```
+
+---
 
 
 

@@ -1,0 +1,11 @@
+.deck-container table {
+	vertical-align: middle;
+	height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.deck-container table, .deck-container th, .deck-container td {
+  border: 1px solid black;
+  padding: 10px;
+}
